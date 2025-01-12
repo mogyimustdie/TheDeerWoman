@@ -16,6 +16,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            position: relative;
         }
         .poem-container {
             max-width: 800px;
@@ -40,6 +41,19 @@
             max-width: 80%;
             height: auto;
         }
+        .side-logo {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: auto;
+        }
+        .side-logo.left {
+            left: 10px;
+        }
+        .side-logo.right {
+            right: 10px;
+        }
         footer {
             margin-top: 20px;
             font-size: 0.9rem;
@@ -48,6 +62,8 @@
     </style>
 </head>
 <body>
+    <img src="misanthropy.png" alt="Left Logo" class="side-logo left">
+    <img src="misanthropy.png" alt="Right Logo" class="side-logo right">
     <div class="poem-container">
         <h1>The Deer Woman in My Mind</h1>
         <p>
