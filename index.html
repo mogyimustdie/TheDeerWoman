@@ -23,45 +23,36 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            position: relative; /* Ensures absolute positioning works for the image */
+            position: relative;
         }
-        
         .poem-container {
             max-width: 800px;
             padding: 20px;
             background: none;
         }
-        
         h1 {
             text-align: center;
             font-size: 3.3rem;
             color: #ffffff;
         }
-        
         p {
             font-size: 2rem;
             line-height: 1.8;
             text-align: center;
         }
-        
         .poem-image {
-            position: absolute; /* Makes the image position absolute */
-            bottom: 0;  /* Ensures the image stays at the bottom */
-            width: 100%; /* Optional: Ensures the image scales across the width of the screen */
+            margin-top: 20px;
             text-align: center;
         }
-
         .poem-image img {
             max-width: 70%;
             height: auto;
         }
-        
         footer {
             margin-top: 20px;
             font-size: 0.9rem;
             color: #ffffff;
         }
-        
         .quote {
             font-size: 0.9rem;
             margin-bottom: 10px;
@@ -69,7 +60,6 @@
             font-style: italic;
             text-align: center;
         }
-        
         .signature {
             font-style: italic;
             text-align: center;
@@ -90,10 +80,9 @@
             Her poor, rugged tent is where she will reside.<br>
             In my life I always find, the deer woman in my mind.
         </p>
-    </div>
-
-    <div class="poem-image">
-        <img src="thedeerwoman.png" alt="The Deer Woman">
+        <div class="poem-image">
+            <img src="thedeerwoman.png" alt="The Deer Woman">
+        </div>
     </div>
 </body>
 </html>
