@@ -26,6 +26,15 @@
             position: relative;
         }
 
+        /* Title - making sure it stays larger than the poem text */
+        h1 {
+            font-size: 3.3rem;
+            color: #ffffff;
+            text-align: center;
+            margin: 0 0 20px;
+        }
+
+        /* Poem text */
         .poem-container {
             max-width: 800px;
             padding: 20px;
@@ -33,7 +42,7 @@
             z-index: 1; /* Text stays behind */
         }
 
-        h1, p {
+        p {
             font-size: 2rem;
             line-height: 1.8;
             text-align: center;
@@ -70,16 +79,14 @@
         .poem-image {
             position: fixed;  /* Keeps the image at the bottom */
             bottom: -100%;    /* Initially off the screen */
-            width: 100%;  /* Stretch to full width */
-            height: 200px;  /* Set the height to match the overlay */
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation with infinite loop */
             z-index: 2;  /* Ensure the image is in front of the text */
         }
 
         .poem-image img {
-            width: 100%;  /* Make sure the image stretches to full width */
-            height: 100%;  /* Ensure the image's height matches the container */
+            max-width: 100%;  /* Prevent stretching, but allow up to the screen width */
+            height: auto;     /* Keep the image's aspect ratio */
         }
 
         /* Overlay image */
@@ -87,14 +94,12 @@
             position: fixed;  /* Fix the overlay to the bottom of the screen */
             left: 0;  /* Align it to the left edge */
             bottom: 0;  /* Place it at the very bottom of the screen */
-            width: 100%;  /* Make it span the entire width */
-            height: 200px;  /* Match the height of the Deer Woman image */
             z-index: 3;  /* Ensure the overlay is on top of the Deer Woman image */
         }
 
         .overlay img {
-            width: 100%;  /* Stretch the overlay image to cover the full width */
-            height: 100%;  /* Match the height of the overlay to its container */
+            max-width: 100%;  /* Prevent stretching, but allow up to the screen width */
+            height: auto;     /* Keep the overlay's aspect ratio */
         }
 
         footer {
