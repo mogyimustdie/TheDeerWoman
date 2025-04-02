@@ -29,9 +29,9 @@
         /* Title */
         h1 {
             font-size: 3.3rem;
+            color: #ffffff;
             text-align: center;
             margin: 0 0 20px;
-             animation: glow 1.5s ease-in-out infinite, rainbowText 15s ease-in-out infinite; /* Glowing text animation and rainbow effect */
         }
 
         /* Poem text */
@@ -51,14 +51,20 @@
 
         /* Glowing text animation */
         @keyframes glow {
-            0% {
+            0%, 100% {
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            45% {
+                text-shadow: 0 0 10px #ff7f7f, 0 0 20px #ff7f7f;
             }
             50% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+                text-shadow: 0 0 10px #ffbf7f, 0 0 20px #ffbf7f;
             }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+            55% {
+                text-shadow: 0 0 10px #7fff7f, 0 0 20px #7fff7f;
+            }
+            60% {
+                text-shadow: 0 0 10px #7f7fff, 0 0 20px #7f7fff;
             }
         }
 
@@ -110,6 +116,10 @@
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation */
             z-index: 2;  /* Ensure the image is in front of the text */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);  /* Apply shadow to the image container */
+            background: rgba(0, 0, 0, 0); /* Ensure transparent background */
+            display: inline-block; /* To wrap around the image */
+            padding: 10px; /* Small padding around the image for shadow effect */
         }
 
         /* Deer Woman Image */
