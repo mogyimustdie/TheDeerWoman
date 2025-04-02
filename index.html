@@ -81,42 +81,33 @@
             }
         }
 
-        /* Deer Woman Image */
+        /* Deer Woman Image Container */
         .poem-image {
             position: fixed;
             bottom: -100%;
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation */
             z-index: 2;  /* Ensure the image is in front of the text */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);  /* Apply shadow to the image container */
+            background: rgba(0, 0, 0, 0); /* Ensure transparent background */
+            display: inline-block; /* To wrap around the image */
+            padding: 10px; /* Small padding around the image for shadow effect */
         }
 
-        /* Pseudo-element for the shadow */
-        .poem-image::before {
-            content: '';
-            position: absolute;
-            bottom: -10px;  /* Adjust shadow position */
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.8);  /* Shadow effect */
-            z-index: -1;  /* Place the shadow behind the image */
-        }
-
+        /* Deer Woman Image */
         .poem-image img {
             max-width: 100%;  /* Prevent stretching, but allow up to the screen width */
             height: auto;     /* Keep the image's aspect ratio */
         }
 
-        /* Overlay image - now positioned at the bottom of the screen and fixed in place */
+        /* Overlay image - positioned at the bottom of the screen and fixed in place */
         .overlay {
-            position: fixed;  /* Fix the overlay to the bottom of the screen */
-            left: 50%;  /* Position it in the center horizontally */
-            bottom: 0;  /* Place it at the very bottom of the screen */
-            transform: translateX(-50%);  /* Shift it left by 50% of its own width */
-            z-index: 3;  /* Ensure the overlay is on top of the Deer Woman image */
-            margin: 0;   /* Ensure there's no default margin */
-            padding: 0;  /* Ensure there's no default padding */
-            height: 500px; /* Ensure the height is exactly 500px (same as the image height) */
+            position: fixed;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: 3; /* Overlay is on top of the image */
+            height: 500px;
         }
 
         .overlay img {
