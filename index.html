@@ -11,7 +11,7 @@
             font-weight: normal;
             font-style: normal;
         }
-        
+
         body {
             font-family: 'Marigold Wild', serif;
             background-color: #000000;
@@ -23,36 +23,58 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            position: relative;
         }
+
         .poem-container {
             max-width: 800px;
             padding: 20px;
             background: none;
         }
+
         h1 {
             text-align: center;
             font-size: 3.3rem;
             color: #ffffff;
         }
+
         p {
             font-size: 2rem;
             line-height: 1.8;
             text-align: center;
         }
-        .poem-image {
-            margin-top: 20px;
-            text-align: center;
+
+        /* Keyframe animation for the deer woman image */
+        @keyframes riseUp {
+            0% {
+                bottom: -150px;  /* Starts offscreen */
+            }
+            50% {
+                bottom: 50px;    /* Rises up to a certain point */
+            }
+            100% {
+                bottom: -150px;  /* Goes back offscreen */
+            }
         }
+
+        .poem-image {
+            position: fixed;  /* Keeps the image at the bottom */
+            bottom: -150px;   /* Initially hidden off the screen */
+            width: 100%;
+            text-align: center;
+            animation: riseUp 5s ease-in-out infinite; /* Apply animation with infinite loop */
+        }
+
         .poem-image img {
             max-width: 70%;
             height: auto;
         }
+
         footer {
             margin-top: 20px;
             font-size: 0.9rem;
             color: #ffffff;
         }
+
         .quote {
             font-size: 0.9rem;
             margin-bottom: 10px;
@@ -60,6 +82,7 @@
             font-style: italic;
             text-align: center;
         }
+
         .signature {
             font-style: italic;
             text-align: center;
@@ -80,9 +103,10 @@
             Her poor, rugged tent is where she will reside.<br>
             In my life I always find, the deer woman in my mind.
         </p>
-        <div class="poem-image">
-            <img src="thedeerwoman.png" alt="The Deer Woman">
-        </div>
+    </div>
+
+    <div class="poem-image">
+        <img src="thedeerwoman.png" alt="The Deer Woman">
     </div>
 </body>
 </html>
