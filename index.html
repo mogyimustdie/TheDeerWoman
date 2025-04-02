@@ -32,7 +32,6 @@
             color: #ffffff;
             text-align: center;
             margin: 0 0 20px;
-            animation: glow 1.5s ease-in-out infinite, rainbowText 15s ease-in-out infinite; /* Glowing text animation and rainbow effect */
         }
 
         /* Poem text */
@@ -65,19 +64,19 @@
 
         /* Rainbow text color animation */
         @keyframes rainbowText {
-            0% {
-                color: white;
+            0%, 100% {
+                color: white; /* Default white color */
             }
-            25% {
+            40%, 60% {
                 color: #ff7f7f; /* Light pink */
             }
             50% {
                 color: #ffbf7f; /* Light orange */
             }
-            75% {
+            70% {
                 color: #7fff7f; /* Light green */
             }
-            100% {
+            80%, 90% {
                 color: #7f7fff; /* Light blue */
             }
         }
