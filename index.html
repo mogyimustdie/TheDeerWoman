@@ -29,9 +29,9 @@
         /* Title */
         h1 {
             font-size: 3.3rem;
-            color: #ffffff;
             text-align: center;
             margin: 0 0 20px;
+             animation: glow 1.5s ease-in-out infinite, rainbowText 15s ease-in-out infinite; /* Glowing text animation and rainbow effect */
         }
 
         /* Poem text */
@@ -62,21 +62,24 @@
             }
         }
 
-        /* Rainbow text color animation */
+        /* Rainbow text color animation (starts when deer is up and fades back to white) */
         @keyframes rainbowText {
             0%, 100% {
                 color: white; /* Default white color */
             }
             40%, 60% {
+                color: white; /* Keep white until deer starts rising */
+            }
+            45% {
                 color: #ff7f7f; /* Light pink */
             }
             50% {
                 color: #ffbf7f; /* Light orange */
             }
-            70% {
+            55% {
                 color: #7fff7f; /* Light green */
             }
-            80%, 90% {
+            60% {
                 color: #7f7fff; /* Light blue */
             }
         }
@@ -107,10 +110,6 @@
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation */
             z-index: 2;  /* Ensure the image is in front of the text */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);  /* Apply shadow to the image container */
-            background: rgba(0, 0, 0, 0); /* Ensure transparent background */
-            display: inline-block; /* To wrap around the image */
-            padding: 10px; /* Small padding around the image for shadow effect */
         }
 
         /* Deer Woman Image */
