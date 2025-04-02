@@ -23,12 +23,14 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            position: relative;
         }
 
         .poem-container {
             max-width: 800px;
             padding: 20px;
             background: none;
+            z-index: 1; /* Make sure text stays behind */
         }
 
         /* Keyframe animation for glowing text */
@@ -64,15 +66,15 @@
         @keyframes riseUp {
             0% {
                 bottom: -100%;  /* Move off the screen completely (100% of the image height) */
-                filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.6));  /* Shadow when she's off-screen */
+                filter: drop-shadow(0 15px 60px rgba(0, 0, 0, 0.9));  /* Dark, large shadow for depth */
             }
             50% {
                 bottom: 0%;    /* Rises up to the desired position */
-                filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));  /* Shadow when she's near the text */
+                filter: drop-shadow(0 20px 80px rgba(0, 0, 0, 0.8));  /* More pronounced shadow */
             }
             100% {
                 bottom: -100%;   /* Move back off the screen */
-                filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.6));  /* Shadow when she's off-screen again */
+                filter: drop-shadow(0 15px 60px rgba(0, 0, 0, 0.9));  /* Dark, large shadow for depth */
             }
         }
 
@@ -82,12 +84,13 @@
             width: 100%;
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation with infinite loop */
+            z-index: 2;  /* Ensure the image is in front of the text */
         }
 
         .poem-image img {
             max-width: 70%;
             height: auto;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6)); /* Apply shadow on image */
+            filter: drop-shadow(0 20px 80px rgba(0, 0, 0, 0.9)); /* Apply a large, dark shadow */
         }
 
         footer {
