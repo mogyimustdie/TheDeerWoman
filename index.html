@@ -31,6 +31,23 @@
             background: none;
         }
 
+        /* Keyframe animation for glowing text */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        h1, p {
+            animation: glow 1.5s ease-in-out infinite; /* Apply animation with a 1.5s duration */
+        }
+
         h1 {
             text-align: center;
             font-size: 3.3rem;
@@ -43,16 +60,19 @@
             text-align: center;
         }
 
-        /* Keyframe animation for the deer woman image */
+        /* Keyframe animation for the deer woman image with shadow */
         @keyframes riseUp {
             0% {
                 bottom: -100%;  /* Move off the screen completely (100% of the image height) */
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);  /* Shadow when she's off-screen (strong and large) */
             }
             50% {
                 bottom: 0%;    /* Rises up to the desired position */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  /* Shadow when she's near the text (lighter and smaller) */
             }
             100% {
                 bottom: -100%;   /* Move back off the screen */
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);  /* Shadow when she's off-screen again (strong and large) */
             }
         }
 
