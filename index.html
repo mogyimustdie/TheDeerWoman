@@ -46,19 +46,19 @@
         /* Keyframe animation for the deer woman image */
         @keyframes riseUp {
             0% {
-                bottom: -150px;  /* Starts offscreen */
+                bottom: -100%;  /* Move off the screen completely (100% of the image height) */
             }
             50% {
-                bottom: 50px;    /* Rises up to a certain point */
+                bottom: 50px;    /* Rises up to the desired position */
             }
             100% {
-                bottom: -150px;  /* Goes back offscreen */
+                bottom: -100%;   /* Move back off the screen */
             }
         }
 
         .poem-image {
             position: fixed;  /* Keeps the image at the bottom */
-            bottom: -150px;   /* Initially hidden off the screen */
+            bottom: -100%;    /* Initially off the screen */
             width: 100%;
             text-align: center;
             animation: riseUp 5s ease-in-out infinite; /* Apply animation with infinite loop */
