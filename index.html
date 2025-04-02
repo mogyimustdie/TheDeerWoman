@@ -65,16 +65,16 @@
         /* Keyframe animation for the Deer Woman image */
         @keyframes riseUp {
             0% {
-                bottom: -100%;  /* Start off-screen */
-            }
-            40% {
-                bottom: 0px;   /* Align at the bottom of the screen */
+                bottom: -100%;  /* Stay off-screen */
             }
             50% {
-                bottom: 0px;   /* Pause for a moment */
+                bottom: -100%;  /* Stay off-screen for 15 seconds */
             }
-            60% {
-                bottom: 0px;   /* Continue pause */
+            55% {
+                bottom: 0px;   /* Start rising from the bottom */
+            }
+            70% {
+                bottom: 0px;   /* Pause at the bottom */
             }
             100% {
                 bottom: -100%;   /* Go back off the screen */
@@ -86,7 +86,7 @@
             position: fixed;
             bottom: -100%;
             text-align: center;
-            animation: riseUp 15s ease-in-out infinite; /* Apply animation */
+            animation: riseUp 30s ease-in-out infinite; /* Apply animation */
             z-index: 2;  /* Ensure the image is in front of the text */
             filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));  /* Strong shadow for realism */
         }
