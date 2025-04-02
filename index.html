@@ -96,14 +96,17 @@
             height: auto;     /* Keep the image's aspect ratio */
         }
 
-        /* Overlay image */
-        .overlay {
-            position: fixed; 
-            left: 50%;  
-            bottom: 0;  
-            transform: translateX(-50%);
-            z-index: 3;
-        }
+  /* Overlay image - now positioned at the bottom of the screen and fixed in place */
+.overlay {
+    position: fixed;  /* Fix the overlay to the bottom of the screen */
+    left: 50%;  /* Position it in the center horizontally */
+    bottom: 0;  /* Place it at the very bottom of the screen */
+    transform: translateX(-50%);  /* Shift it left by 50% of its own width */
+    z-index: 3;  /* Ensure the overlay is on top of the Deer Woman image */
+    margin: 0;   /* Ensure there's no default margin */
+    padding: 0;  /* Ensure there's no default padding */
+    height: 500px; /* Ensure the height is exactly 500px (same as the image height) */
+}
 
         .overlay img {
             max-width: 100%;  
