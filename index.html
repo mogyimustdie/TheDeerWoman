@@ -46,29 +46,98 @@
             font-size: 2rem;
             line-height: 1.8;
             text-align: center;
-            animation: glow 1.5s ease-in-out infinite, rainbowText 15s ease-in-out infinite; /* Glowing text animation and rainbow effect */
+            animation: glow 1.5s ease-in-out infinite; /* Glowing text animation */
         }
 
         /* Glowing text animation */
         @keyframes glow {
-            0%, 100% {
+            0% {
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
             }
-            40% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); /* Glow stays white before deer starts rising */
-            }
-            45% {
-                text-shadow: 0 0 10px #ff7f7f, 0 0 20px #ff7f7f;
-            }
             50% {
-                text-shadow: 0 0 10px #ffbf7f, 0 0 20px #ffbf7f;
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
             }
-            55% {
-                text-shadow: 0 0 10px #7fff7f, 0 0 20px #7fff7f;
-            }
-            60% {
-                text-shadow: 0 0 10px #7f7fff, 0 0 20px #7f7fff;
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
             }
         }
 
-        /* Rainbow text color animation (starts when deer is up and fades
+        /* Keyframe animation for the Deer Woman image */
+        @keyframes riseUp {
+            0% {
+                bottom: -100%;  /* Start off-screen */
+            }
+            40% {
+                bottom: 0px;   /* Align at the bottom of the screen */
+            }
+            50% {
+                bottom: 0px;   /* Pause for a moment */
+            }
+            60% {
+                bottom: 0px;   /* Continue pause */
+            }
+            100% {
+                bottom: -100%;   /* Go back off the screen */
+            }
+        }
+
+        /* Deer Woman Image */
+        .poem-image {
+            position: fixed;
+            bottom: -100%;
+            text-align: center;
+            animation: riseUp 15s ease-in-out infinite; /* Apply animation */
+            z-index: 2;  /* Ensure the image is in front of the text */
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));  /* Strong shadow for realism */
+        }
+
+        .poem-image img {
+            max-width: 100%;  /* Prevent stretching, but allow up to the screen width */
+            height: auto;     /* Keep the image's aspect ratio */
+        }
+
+        /* Overlay image - now positioned at the bottom of the screen and fixed in place */
+        .overlay {
+            position: fixed;  /* Fix the overlay to the bottom of the screen */
+            left: 50%;  /* Position it in the center horizontally */
+            bottom: 0;  /* Place it at the very bottom of the screen */
+            transform: translateX(-50%);  /* Shift it left by 50% of its own width */
+            z-index: 3;  /* Ensure the overlay is on top of the Deer Woman image */
+            margin: 0;   /* Ensure there's no default margin */
+            padding: 0;  /* Ensure there's no default padding */
+            height: 500px; /* Ensure the height is exactly 500px (same as the image height) */
+        }
+
+        .overlay img {
+            max-width: 100%;  
+            height: auto;     
+        }
+    </style>
+</head>
+<body>
+    <div class="poem-container">
+        <h1>The Deer Woman in My Mind</h1>
+        <p>
+            Wearing flowers on her head, the deer woman in my mind,<br>
+            She's starving but never dead, the only one of her kind.<br>
+            Next to the gleaming rainbow stream,<br>
+            She plays her flute for the sad, low trees.<br>
+            Listening to what they all feel and think,<br>
+            Collecting tears of joy for her to drink.<br>
+            Her world is dimly lit by the candle in the sky,<br>
+            Her poor, rugged tent is where she will reside.<br>
+            In my life I always find, the deer woman in my mind.
+        </p>
+    </div>
+
+    <!-- Deer Woman image that rises from the bottom -->
+    <div class="poem-image">
+        <img src="thedeerwoman.png" alt="The Deer Woman">
+    </div>
+
+    <!-- Overlay image -->
+    <div class="overlay">
+        <img src="overlay.png" alt="Overlay Effect">
+    </div>
+</body>
+</html>
