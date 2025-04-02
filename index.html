@@ -65,16 +65,16 @@
         /* Keyframe animation for the deer woman image with shadow */
         @keyframes riseUp {
             0% {
-                bottom: -100%;  /* Move off the screen completely (100% of the image height) */
-                filter: drop-shadow(0 15px 60px rgba(0, 0, 0, 0.9));  /* Dark, large shadow for depth */
+                bottom: -100%;  /* Start off the screen */
+                filter: grayscale(100%) brightness(0);  /* Fully black (grayscale) */
             }
             50% {
-                bottom: 0%;    /* Rises up to the desired position */
-                filter: drop-shadow(0 20px 80px rgba(0, 0, 0, 0.8));  /* More pronounced shadow */
+                bottom: 0%;    /* Move upwards */
+                filter: grayscale(0%) brightness(1);  /* Full color */
             }
             100% {
-                bottom: -100%;   /* Move back off the screen */
-                filter: drop-shadow(0 15px 60px rgba(0, 0, 0, 0.9));  /* Dark, large shadow for depth */
+                bottom: -100%;   /* Go back off the screen */
+                filter: grayscale(100%) brightness(0);  /* Fully black (grayscale) */
             }
         }
 
@@ -85,14 +85,12 @@
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation with infinite loop */
             z-index: 2;  /* Ensure the image is in front of the text */
-            mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Fade effect (black to transparent) */
-            -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* For Safari */
         }
 
         .poem-image img {
             max-width: 70%;
             height: auto;
-            filter: drop-shadow(0 20px 80px rgba(0, 0, 0, 0.9)); /* Apply a large, dark shadow */
+            filter: grayscale(100%) brightness(0);  /* Start with black (grayscale) */
         }
 
         footer {
