@@ -62,19 +62,16 @@
             text-align: center;
         }
 
-        /* Keyframe animation for the deer woman image with shadow */
+        /* Keyframe animation for the deer woman image */
         @keyframes riseUp {
             0% {
                 bottom: -100%;  /* Start off the screen */
-                filter: grayscale(100%) brightness(0);  /* Fully black (grayscale) */
             }
             50% {
                 bottom: 0%;    /* Move upwards */
-                filter: grayscale(0%) brightness(1);  /* Full color */
             }
             100% {
                 bottom: -100%;   /* Go back off the screen */
-                filter: grayscale(100%) brightness(0);  /* Fully black (grayscale) */
             }
         }
 
@@ -90,7 +87,20 @@
         .poem-image img {
             max-width: 70%;
             height: auto;
-            filter: grayscale(100%) brightness(0);  /* Start with black (grayscale) */
+        }
+
+        /* Overlay image */
+        .overlay {
+            position: fixed;
+            bottom: 0;  /* Always at the bottom of the screen */
+            width: 100%;  /* Make it span the entire width */
+            text-align: center;
+            z-index: 3;  /* Ensure it is above the Deer Woman image */
+        }
+
+        .overlay img {
+            max-width: 70%;  /* Adjust the overlay to match the Deer Woman image */
+            height: auto;
         }
 
         footer {
@@ -132,5 +142,7 @@
     <div class="poem-image">
         <img src="thedeerwoman.png" alt="The Deer Woman">
     </div>
-</body>
-</html>
+
+    <!-- New fixed overlay image -->
+    <div class="overlay">
+        <img
