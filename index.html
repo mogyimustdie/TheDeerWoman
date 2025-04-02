@@ -12,77 +12,65 @@
             font-style: normal;
         }
         
-        body {
-            font-family: 'Marigold Wild', serif;
-            background-color: #000000;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
-        }
-        .poem-container {
-            max-width: 800px;
-            padding: 20px;
-            background: none;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #ffffff;
-        }
-        p {
-            font-size: 2rem;
-            line-height: 1.8;
-            text-align: center;
-        }
-        .poem-image {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .poem-image img {
-            max-width: 70%;
-            height: auto;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #ffffff;
-        }
-        .quote {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-            font-style: italic;
-            text-align: center;
-        }
-        .signature {
-            font-style: italic;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="poem-container">
-        <h1>The Deer Woman in My Mind</h1>
-        <p>
-            Wearing flowers on her head, the deer woman in my mind,<br>
-            She's starving but never dead, the only one of her kind.<br>
-            Next to the gleaming rainbow stream,<br>
-            She plays her flute for the sad, low trees.<br>
-            Listening to what they all feel and think,<br>
-            Collecting tears of joy for her to drink.<br>
-            Her world is dimly lit by the candle in the sky,<br>
-            Her poor, rugged tent is where she will reside.<br>
-            In my life I always find, the deer woman in my mind.
-        </p>
-        <div class="poem-image">
-            <img src="thedeerwoman.png" alt="The Deer Woman">
-        </div>
-    </div>
-</body>
-</html>
+       body {
+    font-family: 'Marigold Wild', serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;  /* This makes the .poem-image's absolute positioning work */
+}
+
+.poem-container {
+    max-width: 800px;
+    padding: 20px;
+    background: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3.3rem;
+    color: #ffffff;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.poem-image {
+    position: absolute; /* Absolute positioning to move it to the bottom */
+    bottom: 0;  /* Align it to the bottom */
+    width: 100%;  /* Optional: ensure the image scales across the width of the screen */
+    text-align: center;
+}
+
+.poem-image img {
+    max-width: 70%;
+    height: auto;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.quote {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-style: italic;
+    text-align: center;
+}
+
+.signature {
+    font-style: italic;
+    text-align: center;
+}
