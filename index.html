@@ -30,7 +30,7 @@
             max-width: 800px;
             padding: 20px;
             background: none;
-            z-index: 1; /* Make sure text stays behind */
+            z-index: 1; /* Text stays behind */
         }
 
         /* Keyframe animation for glowing text */
@@ -85,6 +85,8 @@
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation with infinite loop */
             z-index: 2;  /* Ensure the image is in front of the text */
+            mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Fade effect (black to transparent) */
+            -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* For Safari */
         }
 
         .poem-image img {
