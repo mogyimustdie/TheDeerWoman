@@ -92,14 +92,15 @@
         /* Overlay image */
         .overlay {
             position: fixed;
-            bottom: 0%;  /* Always at the bottom of the screen */
+            left: 0;  /* Align at the very left of the screen */
+            bottom: 0;  /* Align at the very bottom of the screen */
             width: 100%;  /* Make it span the entire width */
             text-align: center;
             z-index: 3;  /* Ensure it is above the Deer Woman image */
         }
 
         .overlay img {
-            max-width: 70%;  /* Adjust the overlay to match the Deer Woman image */
+            width: 100%;  /* Make sure the overlay image stretches to the full width */
             height: auto;
         }
 
@@ -145,5 +146,7 @@
 
     <!-- New fixed overlay image -->
     <div class="overlay">
-        <img src="overlay.png" alt=" ">
-        <img
+        <img src="overlay.png" alt="Overlay Effect">
+    </div>
+</body>
+</html>
