@@ -64,15 +64,15 @@
         @keyframes riseUp {
             0% {
                 bottom: -100%;  /* Move off the screen completely (100% of the image height) */
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);  /* Shadow when she's off-screen (strong and large) */
+                filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.6));  /* Shadow when she's off-screen */
             }
             50% {
                 bottom: 0%;    /* Rises up to the desired position */
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  /* Shadow when she's near the text (lighter and smaller) */
+                filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));  /* Shadow when she's near the text */
             }
             100% {
                 bottom: -100%;   /* Move back off the screen */
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);  /* Shadow when she's off-screen again (strong and large) */
+                filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.6));  /* Shadow when she's off-screen again */
             }
         }
 
@@ -87,6 +87,7 @@
         .poem-image img {
             max-width: 70%;
             height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6)); /* Apply shadow on image */
         }
 
         footer {
