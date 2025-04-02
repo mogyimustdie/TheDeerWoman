@@ -54,6 +54,9 @@
             0%, 100% {
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
             }
+            40% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); /* Glow stays white before deer starts rising */
+            }
             45% {
                 text-shadow: 0 0 10px #ff7f7f, 0 0 20px #ff7f7f;
             }
@@ -68,106 +71,4 @@
             }
         }
 
-        /* Rainbow text color animation (starts when deer is up and fades back to white) */
-        @keyframes rainbowText {
-            0%, 100% {
-                color: white; /* Default white color */
-            }
-            40%, 60% {
-                color: white; /* Keep white until deer starts rising */
-            }
-            45% {
-                color: #ff7f7f; /* Light pink */
-            }
-            50% {
-                color: #ffbf7f; /* Light orange */
-            }
-            55% {
-                color: #7fff7f; /* Light green */
-            }
-            60% {
-                color: #7f7fff; /* Light blue */
-            }
-        }
-
-        /* Keyframe animation for the Deer Woman image */
-        @keyframes riseUp {
-            0% {
-                bottom: -100%;  /* Start off-screen */
-            }
-            40% {
-                bottom: 0px;   /* Align at the bottom of the screen */
-            }
-            50% {
-                bottom: 0px;   /* Pause for a moment */
-            }
-            60% {
-                bottom: 0px;   /* Continue pause */
-            }
-            100% {
-                bottom: -100%;   /* Go back off the screen */
-            }
-        }
-
-        /* Deer Woman Image Container */
-        .poem-image {
-            position: fixed;
-            bottom: -100%;
-            text-align: center;
-            animation: riseUp 15s ease-in-out infinite; /* Apply animation */
-            z-index: 2;  /* Ensure the image is in front of the text */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);  /* Apply shadow to the image container */
-            background: rgba(0, 0, 0, 0); /* Ensure transparent background */
-            display: inline-block; /* To wrap around the image */
-            padding: 10px; /* Small padding around the image for shadow effect */
-        }
-
-        /* Deer Woman Image */
-        .poem-image img {
-            max-width: 100%;  /* Prevent stretching, but allow up to the screen width */
-            height: auto;     /* Keep the image's aspect ratio */
-        }
-
-        /* Overlay image - positioned at the bottom of the screen and fixed in place */
-        .overlay {
-            position: fixed;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            z-index: 3; /* Overlay is on top of the image */
-            height: 500px;
-        }
-
-        .overlay img {
-            max-width: 100%;  
-            height: auto;     
-        }
-    </style>
-</head>
-<body>
-    <div class="poem-container">
-        <h1>The Deer Woman in My Mind</h1>
-        <p>
-            Wearing flowers on her head, the deer woman in my mind,<br>
-            She's starving but never dead, the only one of her kind.<br>
-            Next to the gleaming rainbow stream,<br>
-            She plays her flute for the sad, low trees.<br>
-            Listening to what they all feel and think,<br>
-            Collecting tears of joy for her to drink.<br>
-            Her world is dimly lit by the candle in the sky,<br>
-            Her poor, rugged tent is where she will reside.<br>
-            In my life I always find, the deer woman in my mind.
-        </p>
-    </div>
-
-    <!-- Deer Woman image that rises from the bottom -->
-    <div class="poem-image">
-        <img src="thedeerwoman.png" alt="The Deer Woman">
-    </div>
-
-    <!-- Overlay image -->
-    <div class="overlay">
-        <img src="overlay.png" alt="Overlay Effect">
-    </div>
-</body>
-</html>
+        /* Rainbow text color animation (starts when deer is up and fades
