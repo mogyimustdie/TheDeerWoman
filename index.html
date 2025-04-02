@@ -33,6 +33,13 @@
             z-index: 1; /* Text stays behind */
         }
 
+        h1, p {
+            font-size: 2rem;
+            line-height: 1.8;
+            text-align: center;
+            animation: glow 1.5s ease-in-out infinite; /* Apply animation with a 1.5s duration */
+        }
+
         /* Keyframe animation for glowing text */
         @keyframes glow {
             0% {
@@ -46,62 +53,48 @@
             }
         }
 
-        h1, p {
-            animation: glow 1.5s ease-in-out infinite; /* Apply animation with a 1.5s duration */
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3.3rem;
-            color: #ffffff;
-        }
-
-        p {
-            font-size: 2rem;
-            line-height: 1.8;
-            text-align: center;
-        }
-
         /* Keyframe animation for the deer woman image */
         @keyframes riseUp {
             0% {
                 bottom: -100%;  /* Start off the screen */
             }
             50% {
-                bottom: 0%;    /* Move upwards */
+                bottom: 0px;   /* Align at the bottom of the screen */
             }
             100% {
                 bottom: -100%;   /* Go back off the screen */
             }
         }
 
+        /* Deer Woman Image */
         .poem-image {
             position: fixed;  /* Keeps the image at the bottom */
             bottom: -100%;    /* Initially off the screen */
-            width: 100%;
+            width: 100%;  /* Stretch to full width */
+            height: 200px;  /* Set the height to match the overlay */
             text-align: center;
             animation: riseUp 15s ease-in-out infinite; /* Apply animation with infinite loop */
             z-index: 2;  /* Ensure the image is in front of the text */
         }
 
         .poem-image img {
-            max-width: 70%;
-            height: auto;
+            width: 100%;  /* Make sure the image stretches to full width */
+            height: 100%;  /* Ensure the image's height matches the container */
         }
 
         /* Overlay image */
         .overlay {
-            position: absolute;  /* Use absolute positioning */
-            left: 0;  /* Align at the very left of the screen */
-            bottom: 0;  /* Align at the very bottom of the screen */
+            position: fixed;  /* Fix the overlay to the bottom of the screen */
+            left: 0;  /* Align it to the left edge */
+            bottom: 0;  /* Place it at the very bottom of the screen */
             width: 100%;  /* Make it span the entire width */
-            text-align: center;
-            z-index: 3;  /* Ensure it is above the Deer Woman image */
+            height: 200px;  /* Match the height of the Deer Woman image */
+            z-index: 3;  /* Ensure the overlay is on top of the Deer Woman image */
         }
 
         .overlay img {
-            width: 100%;  /* Make sure the overlay image stretches to the full width */
-            height: auto;
+            width: 100%;  /* Stretch the overlay image to cover the full width */
+            height: 100%;  /* Match the height of the overlay to its container */
         }
 
         footer {
@@ -140,11 +133,12 @@
         </p>
     </div>
 
+    <!-- Deer Woman image that rises from the bottom -->
     <div class="poem-image">
         <img src="thedeerwoman.png" alt="The Deer Woman">
     </div>
 
-    <!-- New fixed overlay image -->
+    <!-- Overlay image that stays at the bottom of the screen -->
     <div class="overlay">
         <img src="overlay.png" alt="Overlay Effect">
     </div>
