@@ -7,7 +7,7 @@
     <style>
         @font-face {
             font-family: 'Marigold Wild';
-            src: url('https://raw.githubusercontent.com/mogyimustdie/TheDeerWoman/main/marigoldwild.ttf') format('truetype');
+            src: url('https://raw.githubusercontent.com/mogyimustdie/TheDeerWoman/main/Acadian_Runes.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -47,20 +47,7 @@
             line-height: 1.8;
             text-align: center;
             animation: glow 1.5s ease-in-out infinite; /* Glowing text animation */
-        }
-
-        /* Glowing text animation */
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
-            }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
-            }
-        }
+        }    
 
         /* Keyframe animation for the Deer Woman image */
         @keyframes riseUp {
@@ -81,36 +68,6 @@
             }
         }
 
-        /* Deer Woman Image */
-        .poem-image {
-            position: fixed;
-            bottom: -100%;
-            text-align: center;
-            animation: riseUp 30s ease-in-out infinite; /* Apply animation */
-            z-index: 2;  /* Ensure the image is in front of the text */
-            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));  /* Strong shadow for realism */
-        }
-
-        .poem-image img {
-            max-width: 100%;  /* Prevent stretching, but allow up to the screen width */
-            height: auto;     /* Keep the image's aspect ratio */
-        }
-
-        /* Overlay image - now positioned at the bottom of the screen and fixed in place */
-        .overlay {
-            position: fixed;  /* Fix the overlay to the bottom of the screen */
-            left: 50%;  /* Position it in the center horizontally */
-            bottom: 0;  /* Place it at the very bottom of the screen */
-            transform: translateX(-50%);  /* Shift it left by 50% of its own width */
-            z-index: 3;  /* Ensure the overlay is on top of the Deer Woman image */
-            margin: 0;   /* Ensure there's no default margin */
-            padding: 0;  /* Ensure there's no default padding */
-            height: 500px; /* Ensure the height is exactly 500px (same as the image height) */
-        }
-
-        .overlay img {
-            max-width: 100%;  
-            height: auto;     
         }
     </style>
 </head>
